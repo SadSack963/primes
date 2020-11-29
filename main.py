@@ -21,9 +21,13 @@ def sieve_of_eratosthenes(n):
     # Print all prime numbers
     for p in range(2, n + 1):
         if prime[p]:
-            print(f"{p}, ")
+            # print(f"{p}, ", end="")
+            primes.append(p)
+    return primes
 
-    # driver program
-    if __name__ == '__main__':
-        n = 30
-        print(f"Following are the prime numbers smaller than or equal to {n} {sieve_of_eratosthenes(n)}")
+
+# driver program
+primes = []
+if __name__ == '__main__':
+    n = 100
+    print(f"Following are the prime numbers smaller than or equal to {n} {sieve_of_eratosthenes(n)}")
