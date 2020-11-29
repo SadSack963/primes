@@ -18,13 +18,16 @@ if __name__ == '__main__':
 
     # print(f"List of primes: {sieve_of_eratosthenes(limit)}")  # print the list of primes
     # sieve_of_eratosthenes(limit)  # print to console, or write to file
-    t0 = time.gmtime()
+    t0 = time.time()
+    print(f"{t0}: Generating primes...")
     primes = sieve_of_eratosthenes(limit)
 
-    t1 = time.gmtime()
+    t1 = time.time()
+    print(f"{t1}: Checking for solutions...")
     mpmp19(primes)
 
-    t2 = time.gmtime()
+    t2 = time.time()
+    print(f"{t0}: Finished!\n")
     print(f"It took {t1-t0} seconds to generate the primes below {limit}.")
     print(f"It took {t2-t1} seconds to find the MPMP19 solutions.")
     print(f"The entire process took {t2-t0} seconds.")

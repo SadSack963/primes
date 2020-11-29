@@ -1,4 +1,6 @@
 
+# Time complexity : O(n*log(log(n)))
+
 def sieve_of_eratosthenes(n):
     # Create a boolean array "prime[0..n]" and initialize
     # all entries in it as True.
