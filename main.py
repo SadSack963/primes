@@ -18,16 +18,29 @@ def sieve_of_eratosthenes(n):
                 prime[i] = False
         p += 1
 
-    # Print all prime numbers
+    # # Print all prime numbers to console
+    # for p in range(2, n + 1):
+    #     if prime[p]:
+    #         print(f"{p}, ", end="")
+
+    # # Create a list of primes (CSV)
+    # primes = []
+    # for p in range(2, n + 1):
+    #     if prime[p]:
+    #         primes.append(p)
+    # return primes
+
+    # Write primes to file (one number per line)
+    file = open("prime.txt", "wt")  # Open file for writing text (truncate to 0 length if it exists)
     for p in range(2, n + 1):
         if prime[p]:
-            # print(f"{p}, ", end="")
-            primes.append(p)
-    return primes
+            file.write(f"{p}\n")
+    file.close()
 
 
-# driver program
-primes = []
+# Start
 if __name__ == '__main__':
-    n = 100
-    print(f"Following are the prime numbers smaller than or equal to {n} {sieve_of_eratosthenes(n)}")
+    n = int(input("Find all primes up to : "))
+
+    # print(f"List of primes: {sieve_of_eratosthenes(n)}")
+    sieve_of_eratosthenes(n)  # print to console, or write to file
