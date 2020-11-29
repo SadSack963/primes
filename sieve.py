@@ -1,3 +1,4 @@
+
 def sieve_of_eratosthenes(n):
     # Create a boolean array "prime[0..n]" and initialize
     # all entries in it as True.
@@ -25,17 +26,16 @@ def sieve_of_eratosthenes(n):
     #         print(f"{p}, ", end="")
 
     # # Create a list of primes (CSV)
-    # primes = []
-    # for p in range(2, n + 1):
-    #     if prime[p]:
-    #         primes.append(p)
-    # return primes
-
-    # Write primes to file in current directory (one number per line)
-    file = open("prime.txt", "wt")  # Open file for writing text (truncate to 0 length if it exists)
-    file.write(f"Primes up to {n}\n")
+    primes = []
     for p in range(2, n + 1):
         if prime[p]:
-            file.write(f"{p}\n")
-    file.close()
+            primes.append(p)
+    return primes
+
+    # # Write primes to file in current directory (one number per line)
+    # file = open("prime.txt", "wt")  # Open file for writing text (truncate to 0 length if it exists)
+    # for p in range(2, n + 1):
+    #     if prime[p]:
+    #         file.write(f"{p}\n")
+    # file.close()
 
